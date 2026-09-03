@@ -1,19 +1,29 @@
+
+
 import Link from "next/link";
 
-export default function Home() {
+export default async function Home() {
+
+
+  
+     const res =  await fetch("https://api.open-meteo.com/v1/forecast?latitude=19.0760&longitude=72.8777&current=temperature_2m,relative_humidity_2m,weather_code")
+     const data = await res.json()
+       console.log("data",data)
+ 
+
+
+
+  
   return (
     <main className="min-h-screen bg-slate-50">
-
-      {/* Navbar */}
      
-      {/* Hero Section */}
       <section className="bg-slate-900">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:py-36">
 
           <div className="max-w-3xl">
 
             <span className="rounded-full bg-blue-500/10 px-4 py-2 text-sm font-medium text-blue-400">
-              🌆 Welcome to Mumbai
+              Welcome to Mumbai
             </span>
 
             <h1 className="mt-6 text-4xl font-bold leading-tight text-white sm:text-5xl lg:text-7xl">
@@ -48,7 +58,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Weather Card */}
       <section className="mx-auto -mt-8 max-w-7xl px-5 sm:px-8">
 
         <div className="rounded-2xl bg-white p-6 shadow-xl sm:p-8">
@@ -73,10 +82,11 @@ export default function Home() {
 
               <div className="rounded-xl bg-slate-50 px-6 py-4">
                 <p className="text-sm text-slate-500">
-                  Temperature
+                  weather
+                
                 </p>
                 <p className="mt-1 text-2xl font-bold">
-                  28°C
+                  {data?.current?.temperature_2m}°C
                 </p>
               </div>
 
@@ -85,7 +95,7 @@ export default function Home() {
                   Humidity
                 </p>
                 <p className="mt-1 text-2xl font-bold">
-                  72%
+                  {data?.current?.relative_humidity_2m}%
                 </p>
               </div>
 
@@ -104,7 +114,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* Featured Places */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
 
         <div className="mb-10 flex flex-col gap-4 sm:flex-row sm:items-end sm:justify-between">
@@ -132,14 +141,14 @@ export default function Home() {
 
         </div>
 
-        {/* Cards */}
+     
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-          {/* Card 1 */}
+         
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="flex h-48 items-center justify-center bg-gradient-to-br from-blue-500 to-cyan-400 text-7xl">
-              🏛️
+              
             </div>
 
             <div className="p-5">
@@ -165,11 +174,11 @@ export default function Home() {
 
           </div>
 
-          {/* Card 2 */}
+      
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="flex h-48 items-center justify-center bg-gradient-to-br from-cyan-500 to-blue-400 text-7xl">
-              🌊
+              
             </div>
 
             <div className="p-5">
@@ -195,11 +204,11 @@ export default function Home() {
 
           </div>
 
-          {/* Card 3 */}
+         
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="flex h-48 items-center justify-center bg-gradient-to-br from-orange-400 to-yellow-300 text-7xl">
-              ⛰️
+              
             </div>
 
             <div className="p-5">
@@ -225,11 +234,11 @@ export default function Home() {
 
           </div>
 
-          {/* Card 4 */}
+        
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="flex h-48 items-center justify-center bg-gradient-to-br from-purple-500 to-pink-400 text-7xl">
-              🛕
+              
             </div>
 
             <div className="p-5">
@@ -258,7 +267,8 @@ export default function Home() {
         </div>
       </section>
 
-      {/* CTA */}
+
+
       <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8">
 
         <div className="rounded-3xl bg-blue-600 px-6 py-12 text-center sm:px-12 sm:py-16">
