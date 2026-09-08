@@ -1,19 +1,12 @@
 
-
 import Link from "next/link";
 
 export default async function Home() {
 
-
-  
      const res =  await fetch("https://api.open-meteo.com/v1/forecast?latitude=19.0760&longitude=72.8777&current=temperature_2m,relative_humidity_2m,weather_code")
      const data = await res.json()
        console.log("data",data)
  
-
-
-
-  
   return (
     <main className="min-h-screen bg-slate-50">
      
@@ -266,8 +259,6 @@ export default async function Home() {
 
         </div>
       </section>
-
-
 
       <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8">
 
