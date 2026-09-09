@@ -17,7 +17,7 @@ export default async function Page() {
   return (
     <main className="min-h-screen bg-gradient-to-br from-slate-950 via-slate-900 to-blue-950 px-5 py-12">
       <div className="mx-auto max-w-5xl">
-
+ 
         <div className="mb-10 text-center">
           <p className="mb-2 text-sm font-semibold uppercase tracking-[0.3em] text-blue-400">
             Mumbai Explorer

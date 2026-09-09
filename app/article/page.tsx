@@ -16,14 +16,21 @@ export default async function Page() {
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-7xl mx-auto">
         {data.posts.map((item) => (
+          
           <div
             key={item.id}
             className="bg-white rounded-xl p-6 shadow-md border border-gray-200 "
           >
-            <span className="inline-block bg-blue-100 text-blue-600 
-                             text-xs font-semibold px-3 py-1 rounded-full mb-3">
-              Post #{item.id}
-            </span>
+            
+              <div className="flex gap-2">
+                {
+                item.tags.map((tag)=>(
+                  <span key={tag} className="inline-block bg-blue-100 text-blue-600 
+                             text-xs font-semibold px-3 py-1 rounded-full mb-3">#{tag}</span>
+                ))
+              }
+              </div>
+            
 
             <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
               {item.title}
@@ -34,7 +41,8 @@ export default async function Page() {
             </p>
 
             <div className="mt-5 pt-4 border-t border-gray-200">
-              <Link href={`/article/${item.id}`} className="text-blue-600 font-semibold hover:text-blue-800" >
+          <Link href={`/article/${item.id}`
+              } className="text-blue-600 font-semibold hover:text-blue-800" >
                 Read More →
               </Link>
             </div>
