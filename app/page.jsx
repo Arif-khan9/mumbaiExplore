@@ -125,12 +125,7 @@ export default async function Home() {
             </p>
           </div>
 
-          <Link
-            href="/places"
-            className="font-semibold text-blue-600 hover:text-blue-700"
-          >
-            View All →
-          </Link>
+          
 
         </div>
 
@@ -157,12 +152,7 @@ export default async function Home() {
                 One of Mumbai,s most famous historical landmarks.
               </p>
 
-              <Link
-                href="/places/gateway-of-india"
-                className="mt-4 inline-block font-semibold text-blue-600"
-              >
-                Explore →
-              </Link>
+              
             </div>
 
           </div>
@@ -187,12 +177,7 @@ export default async function Home() {
                 Enjoy beautiful sea views and amazing sunsets.
               </p>
 
-              <Link
-                href="/places/marine-drive"
-                className="mt-4 inline-block font-semibold text-blue-600"
-              >
-                Explore →
-              </Link>
+             
             </div>
 
           </div>
@@ -217,12 +202,7 @@ export default async function Home() {
                 Explore ancient caves and historic sculptures.
               </p>
 
-              <Link
-                href="/places/elephanta-caves"
-                className="mt-4 inline-block font-semibold text-blue-600"
-              >
-                Explore →
-              </Link>
+              
             </div>
 
           </div>
@@ -247,12 +227,7 @@ export default async function Home() {
                 A famous and beautiful temple in Mumbai.
               </p>
 
-              <Link
-                href="/places/siddhivinayak-temple"
-                className="mt-4 inline-block font-semibold text-blue-600"
-              >
-                Explore →
-              </Link>
+             
             </div>
 
           </div>
@@ -273,12 +248,7 @@ export default async function Home() {
             city.
           </p>
 
-          <Link
-            href="/search"
-            className="mt-7 inline-block rounded-xl bg-white px-7 py-3 font-semibold text-blue-600 transition hover:bg-slate-100"
-          >
-            Search Mumbai →
-          </Link>
+          
 
         </div>
 
