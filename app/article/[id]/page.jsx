@@ -36,15 +36,17 @@ const PostArticals = async ({ params }) => {
             >
               {data.body}
             </p>
-              <div className="mt-8 flex flex-wrap gap-2">
+              <div className="mt-8 flex flex-wrap gap-2 ">
                 {data.tags.map((tag) => (
                   <span
                     key={tag}
                     className="rounded-full bg-gray-100 px-3 py-1
                                text-xs font-medium text-gray-600
-                               sm:text-sm"
+                               sm:text-sm "
                   >
-                    #{tag}
+                   <div className=" text-blue-600 bg-blue-50" >
+                     #{tag}
+                   </div>
                   </span>
                 ))}
               </div>

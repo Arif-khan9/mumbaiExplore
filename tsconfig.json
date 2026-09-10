@@ -29,6 +29,6 @@
     ".next/types/**/*.ts",
     ".next/dev/types/**/*.ts",
     "**/*.mts"
-  ],
+, "app/layout.jsx", "app/article/page.jsx", "app/page.jsx", "app/search/page.jsx", "Components/Footer.jsx", "Components/Navbar.jsx", "app/places/page.jsx", "app/article/[id]/page.jsx", "app/about/page.jsx"  ],
   "exclude": ["node_modules"]
 }
