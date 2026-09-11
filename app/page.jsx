@@ -1,40 +1,19 @@
-
 import Link from "next/link";
 import Image from "next/image";
 
 export default async function Home() {
   const res = await fetch(
-    "https://api.open-meteo.com/v1/forecast?latitude=19.0760&longitude=72.8777&current=temperature_2m,relative_humidity_2m,weather_code",
+    "https://api.open-meteo.com/v1/forecast?latitude=19.0760&longitude=72.8777&current=temperature_2m,relative_humidity_2m",
     {
       next: { revalidate: 60 },
     }
   );
 
-  if (!res.ok) {
-    throw new Error("Failed to fetch weather data");
-  }
-
   const data = await res.json();
-
-  const weatherCode = data?.current?.weather_code;
-
-  function getWeatherCondition(code) {
-    if (code === 0) return "Clear Sky";
-    if ([1, 2, 3].includes(code)) return "Partly Cloudy";
-    if ([45, 48].includes(code)) return "Foggy";
-    if ([51, 53, 55, 56, 57].includes(code)) return "Drizzle";
-    if ([61, 63, 65, 66, 67].includes(code)) return "Rainy";
-    if ([71, 73, 75, 77].includes(code)) return "Snowy";
-    if ([80, 81, 82].includes(code)) return "Rain Showers";
-    if ([95, 96, 99].includes(code)) return "Thunderstorm";
-
-    return "Unknown";
-  }
 
   return (
     <main className="min-h-screen bg-slate-50">
 
-      {/* Hero Section */}
       <section className="bg-slate-900">
         <div className="mx-auto max-w-7xl px-5 py-20 sm:px-8 sm:py-28 lg:py-36">
 
@@ -76,7 +55,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Weather Section */}
       <section className="mx-auto -mt-8 max-w-7xl px-5 sm:px-8">
 
         <div className="rounded-2xl bg-white p-6 shadow-xl sm:p-8">
@@ -97,38 +75,25 @@ export default async function Home() {
               </p>
             </div>
 
-            <div className="grid grid-cols-2 gap-4 sm:grid-cols-3">
+            <div className="grid grid-cols-2 gap-4">
 
-              {/* Temperature */}
               <div className="rounded-xl bg-slate-50 px-6 py-4">
                 <p className="text-sm text-slate-500">
                   Temperature
                 </p>
 
                 <p className="mt-1 text-2xl font-bold text-slate-900">
-                  {data?.current?.temperature_2m}°C
+                  {data.current.temperature_2m}°C
                 </p>
               </div>
 
-              {/* Humidity */}
               <div className="rounded-xl bg-slate-50 px-6 py-4">
                 <p className="text-sm text-slate-500">
                   Humidity
                 </p>
 
                 <p className="mt-1 text-2xl font-bold text-slate-900">
-                  {data?.current?.relative_humidity_2m}%
-                </p>
-              </div>
-
-              {/* Condition */}
-              <div className="col-span-2 rounded-xl bg-blue-50 px-6 py-4 sm:col-span-1">
-                <p className="text-sm text-slate-500">
-                  Condition
-                </p>
-
-                <p className="mt-1 text-lg font-bold text-blue-600">
-                  {getWeatherCondition(weatherCode)}
+                  {data.current.relative_humidity_2m}%
                 </p>
               </div>
 
@@ -138,7 +103,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* Featured Places */}
       <section className="mx-auto max-w-7xl px-5 py-20 sm:px-8">
 
         <div className="mb-10">
@@ -159,7 +123,6 @@ export default async function Home() {
 
         <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
 
-          {/* Marine Drive */}
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="relative h-48">
@@ -188,7 +151,6 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* Sea Link */}
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="relative h-48">
@@ -217,7 +179,6 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* Gateway of India */}
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="relative h-48">
@@ -246,7 +207,6 @@ export default async function Home() {
             </div>
           </div>
 
-          {/* CST */}
           <div className="overflow-hidden rounded-2xl bg-white shadow-sm transition hover:-translate-y-1 hover:shadow-xl">
 
             <div className="relative h-48">
@@ -278,7 +238,6 @@ export default async function Home() {
         </div>
       </section>
 
-      {/* CTA Section */}
       <section className="mx-auto max-w-7xl px-5 pb-20 sm:px-8">
 
         <div className="rounded-3xl bg-blue-600 px-6 py-12 text-center sm:px-12 sm:py-16">
@@ -305,4 +264,3 @@ export default async function Home() {
     </main>
   );
 }
-
