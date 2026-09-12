@@ -11,11 +11,11 @@ const PostArticals = async ({ params }) => {
   return (
     <main className="min-h-screen bg-gray-50 px-4 py-8 sm:px-6 lg:px-8">
       <article className="mx-auto w-full max-w-4xl">
-        <div className="overflow-hidden rounded-2xl bg-white shadow-sm ring-1 ring-gray-200">
-          <div className="border-b border-gray-100 p-5 sm:p-8 md:p-10">
+        <div className="overflow-hidden rounded-2xl  bg-white shadow-sm ring-1 ring-gray-200">
+          <div className="border-b border-gray-100 p-5 sm:p-8 md:p-10 bg-blue-950 ">
             <span
               className="inline-flex items-center rounded-full bg-blue-50
-                         px-3 py-1 text-xs font-semibold text-blue-600
+                       px-3 py-1 text-xs font-semibold text-blue-950
                          sm:text-sm"
             >
               Post #{id}
@@ -23,16 +23,16 @@ const PostArticals = async ({ params }) => {
 
             <h1
               className="mt-4 text-2xl font-bold leading-tight text-gray-900
-                         sm:text-3xl md:text-4xl lg:text-5xl"
+                         sm:text-3xl md:text-4xl lg:text-5xl text-white"
             >
               {data.title}
             </h1>
           </div>
 
-          <div className="p-5 sm:p-8 md:p-10">
+          <div className="p-5 sm:p-8 md:p-10 bg-blue-950">
             <p
               className="text-base leading-7 text-gray-600
-                         sm:text-lg sm:leading-8 md:text-xl md:leading-9"
+                         sm:text-lg sm:leading-8 md:text-xl md:leading-9 text-white"
             >
               {data.body}
             </p>
@@ -44,7 +44,7 @@ const PostArticals = async ({ params }) => {
                                text-xs font-medium text-gray-600
                                sm:text-sm "
                   >
-                   <div className=" text-blue-600 bg-blue-50" >
+                   <div className=" text-blue-950 bg-blue-50" >
                      #{tag}
                    </div>
                   </span>
@@ -59,16 +59,16 @@ const PostArticals = async ({ params }) => {
                        sm:flex-row sm:items-center sm:justify-between
                        sm:px-8 md:px-10"
           >
-            <p className="text-sm text-gray-500">
+            <p className="text-sm text-blue-950">
               Article ID: <span className="font-semibold">{id}</span>
             </p>
 
 
 
             <Link href={"/article"}
-              className="w-full rounded-lg bg-blue-600 px-5 py-2.5
+              className="w-full rounded-lg bg-blue-950 px-5 py-2.5
                          text-sm font-semibold text-white
-                         transition hover:bg-blue-700
+                         transition hover:bg-blue-900
                          sm:w-auto"
             >
               Back to Articles

@@ -9,8 +9,8 @@ export default async function Page() {
   console.log("data", data);
 
   return (
-    <div className="min-h-screen bg-gray-100 p-8">
-      <h1 className="text-3xl font-bold text-center mb-8 text-gray-800">
+    <div className="min-h-screen bg-gray-200  p-8">
+      <h1 className="text-3xl font-bold text-center mb-8 t">
         Latest Posts
       </h1>
 
@@ -19,9 +19,8 @@ export default async function Page() {
           
           <div
             key={item.id}
-            className="bg-white rounded-xl p-6 shadow-md border border-gray-200 "
+            className="bg-blue-950 rounded-xl p-6 shadow-md border border-gray-200 "
           >
-            
               <div className="flex gap-2">
                 {
                 item.tags.map((tag)=>(
@@ -32,11 +31,11 @@ export default async function Page() {
               </div>
             
 
-            <h2 className="text-xl font-bold text-gray-800 mb-3 line-clamp-2">
+            <h2 className="text-xl font-bold text-white mb-3 line-clamp-2">
               {item.title}
             </h2>
 
-            <p className="text-gray-600 leading-6 line-clamp-4">
+            <p className="text-white leading-6 line-clamp-4">
               {item.body}
             </p>
 
